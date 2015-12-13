@@ -5,7 +5,13 @@
  */
 package com.romb.service;
 
+import com.romb.domain.Mesto;
+import com.romb.help.EMF;
+import com.romb.help.Helper;
 import com.romb.test.Test;
+import com.sun.jersey.api.core.InjectParam;
+import java.util.List;
+import javax.persistence.EntityManager;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -19,12 +25,14 @@ import javax.ws.rs.core.Response;
 @Path("/test")
 public class TestEndPoint {
     
+    @InjectParam
+    Helper helper;
+    
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response getTest(){
-        Test t = new Test();
-        t.setId(1);
-        t.setName("Test!");
-        return Response.ok().entity(t).build();
+        EntityManager em = helper.getEntityManager();
+        List<Mesto> lista = em.createNamedQuery("Mesto.findAll").getResultList();
+        return Response.ok().entity("Bleki sisa!").build();
     }
 }

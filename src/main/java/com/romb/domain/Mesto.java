@@ -39,7 +39,7 @@ public class Mesto implements Serializable {
     @EmbeddedId
     protected MestoPK mestoPK;
     @Column(name = "rezervacija")
-    private Boolean rezervacija;
+    private boolean rezervacija;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "mesto")
     private List<StudentMesto> studentMestoList;
     @JoinColumn(name = "ustanovaId", referencedColumnName = "ustanovaId", insertable = false, updatable = false)
@@ -65,7 +65,7 @@ public class Mesto implements Serializable {
         this.mestoPK = mestoPK;
     }
 
-    public Boolean getRezervacija() {
+    public boolean getRezervacija() {
         return rezervacija;
     }
 

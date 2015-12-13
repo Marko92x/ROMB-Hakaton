@@ -38,6 +38,13 @@ import org.codehaus.jackson.annotate.JsonIgnore;
     @NamedQuery(name = "Student.findByPassword", query = "SELECT s FROM Student s WHERE s.password = :password")})
 public class Student implements Serializable {
 
+    @Column(name = "poeni")
+    private Integer poeni;
+
+    @Size(max = 255)
+    @Column(name = "token")
+    private String token;
+
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
@@ -147,6 +154,22 @@ public class Student implements Serializable {
     @Override
     public String toString() {
         return "com.romb.domain.Student[ studentId=" + studentId + " ]";
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public Integer getPoeni() {
+        return poeni;
+    }
+
+    public void setPoeni(Integer poeni) {
+        this.poeni = poeni;
     }
     
 }

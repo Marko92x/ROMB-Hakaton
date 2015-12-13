@@ -1,0 +1,16 @@
+body {
+    background-color: rgb(184, 230, 235);
+}
+
+h2 {
+    text-align: center;
+    color: #23717A;
+}
+
+.login-form {
+    padding-top: 40%;
+}
+
+#logIn {
+    background-color: #23717A;
+}

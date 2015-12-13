@@ -38,6 +38,10 @@ import org.codehaus.jackson.annotate.JsonIgnore;
     @NamedQuery(name = "Ustanova.findByBrojMesta", query = "SELECT u FROM Ustanova u WHERE u.brojMesta = :brojMesta")})
 public class Ustanova implements Serializable {
 
+    @Size(max = 10000)
+    @Column(name = "opis")
+    private String opis;
+
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
@@ -138,6 +142,14 @@ public class Ustanova implements Serializable {
     @Override
     public String toString() {
         return "com.romb.domain.Ustanova[ ustanovaId=" + ustanovaId + " ]";
+    }
+
+    public String getOpis() {
+        return opis;
+    }
+
+    public void setOpis(String opis) {
+        this.opis = opis;
     }
     
 }

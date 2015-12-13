@@ -13,5 +13,6 @@
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
       <property name="javax.persistence.jdbc.password" value="mare"/>
     </properties>
+    <shared-cache-mode>NONE</shared-cache-mode>
   </persistence-unit>
 </persistence>
